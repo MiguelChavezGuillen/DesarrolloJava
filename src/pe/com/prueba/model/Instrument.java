@@ -7,13 +7,17 @@ public class Instrument {
     private int id;
     private String name;
     private String description;
-    private byte[] photo;
+    private String photo;
     private InstrumentType instrumentType;
 
-    public Instrument(int id, String name, String description, InstrumentType instrumentType) {
+    public Instrument() {
+    }
+
+    public Instrument(int id, String name, String description, String photo, InstrumentType instrumentType) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.photo = photo;
         this.instrumentType = instrumentType;
     }
 
@@ -41,11 +45,11 @@ public class Instrument {
         this.description = description;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
