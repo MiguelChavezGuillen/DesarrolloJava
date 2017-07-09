@@ -3,18 +3,18 @@ package pe.com.prueba.model;
 /**
  * Created by Fjorsvartnir on 25/06/2017.
  */
-public class CourseLevel {
+public class LessonLevel {
     private int id;
     private String name;
     private String description;
 
-    public CourseLevel(int id, String name, String description) {
+    public LessonLevel(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public CourseLevel() {
+    public LessonLevel() {
     }
 
     public int getId() {

@@ -12,6 +12,6 @@ public class TutorCourse {
     private String description;
     private List<Video> videos;
     private Tutor tutor;
-    private List<CourseLevel> levels;
+    private List<LessonLevel> levels;
 
 }

@@ -25,10 +25,10 @@ public class StudentActivitiesEntity extends BaseEntity {
             while(rs.next()) {
                 students.add( new StudentActivity(
                         rs.getInt(1),
-                        rs.getString(2),
-                        activitiesEntity.findByid(rs.getInt(3)),
+                        activitiesEntity.findById(rs.getInt(3)),
                         studentsEntity.findById(rs.getInt(4))
-                ));
+                    )
+                );
             }
             rs.close();
             getConnection().close();
