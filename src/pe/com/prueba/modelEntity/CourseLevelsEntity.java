@@ -24,10 +24,10 @@ public class CourseLevelsEntity extends BaseEntity {
             ResultSet rs = getConnection().createStatement().executeQuery(criteria);
             while(rs.next()) {
                 sessionLevels.add( new CourseLevel(
-                            rs.getInt(""),
-                            rs.getString(""),
-                            rs.getString("")
-                        ));
+                        rs.getInt(""),
+                        rs.getString(""),
+                        rs.getString("")
+                ));
             }
             rs.close();
             getConnection().close();
