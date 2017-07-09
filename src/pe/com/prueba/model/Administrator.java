@@ -7,13 +7,11 @@ public class Administrator {
     private int id;
     private String email;
     private String name;
-    private String password;
 
-    public Administrator(int id, String email, String name, String password) {
+    public Administrator(int id, String email, String name) {
         this.id = id;
         this.email = email;
         this.name = name;
-        this.password = password;
     }
 
     public int getId() {
@@ -30,14 +28,6 @@ public class Administrator {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getName() {

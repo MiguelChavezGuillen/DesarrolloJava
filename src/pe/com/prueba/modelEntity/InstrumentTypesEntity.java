@@ -46,6 +46,5 @@ public class InstrumentTypesEntity extends BaseEntity {
     public InstrumentType findById(int id){
         List<InstrumentType> instrumentTypes = findByCriteria(DEFAULT_SQL+TABLE+" as it WHERE it.id="+id+";");
         return instrumentTypes.isEmpty() ? new InstrumentType(id,"DESCONOCIDO","No se encontro tipo de instrument") : instrumentTypes.get(0) ;
-
     }
 }
