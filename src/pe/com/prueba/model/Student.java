@@ -5,11 +5,12 @@ package pe.com.prueba.model;
  */
 public class Student extends People {
 
-    public Student() {
-        super();
-    }
+
 
     public Student(int id, String email, String firstName, String lastName, String password, String address, String description) {
         super(id, email, firstName, lastName, password, address, description);
+    }
+    public Student(){
+        super();
     }
 }

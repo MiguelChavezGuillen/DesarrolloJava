@@ -13,6 +13,7 @@ public class Suscription {
         this.lessonMusic = lessonMusic;
         this.student = student;
     }
+    public Suscription(){}
 
     public int getId() {
         return id;
