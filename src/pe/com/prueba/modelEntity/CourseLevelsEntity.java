@@ -1,6 +1,6 @@
 package pe.com.prueba.modelEntity;
 
-import pe.com.prueba.model.CourseLevel;
+import pe.com.prueba.model.LessonLevel;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -18,16 +18,16 @@ public class CourseLevelsEntity extends BaseEntity {
         super(connection);
     }
 
-    private List<CourseLevel> findByCriteria(String criteria) {
-        List<CourseLevel> sessionLevels = new ArrayList<>();
+    private List<LessonLevel> findByCriteria(String criteria) {
+        List<LessonLevel> sessionLevels = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(criteria);
             while(rs.next()) {
-                sessionLevels.add( new CourseLevel(
-                            rs.getInt(""),
-                            rs.getString(""),
-                            rs.getString("")
-                        ));
+                sessionLevels.add( new LessonLevel(
+                        rs.getInt(""),
+                        rs.getString(""),
+                        rs.getString("")
+                ));
             }
             rs.close();
             getConnection().close();
@@ -39,7 +39,7 @@ public class CourseLevelsEntity extends BaseEntity {
             return sessionLevels;
         }
     }
-    public List<CourseLevel> findAll(){
+    public List<LessonLevel> findAll(){
         return this.findByCriteria(DEFAULT_SQL+TABLE);
     }
 }

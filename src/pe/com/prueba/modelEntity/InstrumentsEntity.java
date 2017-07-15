@@ -29,6 +29,7 @@ public class InstrumentsEntity extends BaseEntity {
                         rs.getInt("id"),
                         rs.getString("name"),
                         rs.getString("description"),
+                        rs.getString("description"),
                         instrumentTypesEntity.findById(rs.getInt("instrument_type_id"))
                 ));
             }

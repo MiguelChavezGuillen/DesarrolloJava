@@ -1,6 +1,6 @@
 package pe.com.prueba.service;
 
-import pe.com.prueba.model.CourseLevel;
+import pe.com.prueba.model.LessonLevel;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ListLevelService extends BaseService {
 
-    public List<CourseLevel> getLevels(){
+    public List<LessonLevel> getLevels(){
         return this.getSessionLevelsEntity().findAll();
     }
 }
