@@ -17,8 +17,8 @@ public class IndexAction extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-        PruebaService service = new PruebaService();
-        setInstruments(service.getInstruments());
+        //PruebaService service = new PruebaService();
+        //setInstruments(service.getInstruments());
         return SUCCESS;
     }
 
