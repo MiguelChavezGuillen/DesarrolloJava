@@ -1,0 +1,48 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: juanmendieta
+  Date: 09/07/17
+  Time: 05:42 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="../../Header.jsp" %>
+<html>
+<head>
+    <title>LOG IN</title>
+</head>
+<body>
+<div id="gtco-features"  >
+    <div class="gtco-container">
+        <div class="row">
+            <h2>Sign In</h2>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="mail" class="col-sm-2 control-label">Email:</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="mail" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pass" class="col-sm-2 control-label">Contraseña:</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="pass">
+                    </div>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Ingresar</button>
+                </div>
+            </form>
+            <p>&nbsp;</p>
+            <div class="col-md-12 text-right">
+                <p> Si aun no te haz registrado dale click en el boton &nbsp; &nbsp; &nbsp; &nbsp; <a type="button" class="btn btn-success btn-lg">Registrar</a> </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%@ include file="../../Footer.jsp" %>
+</body>
+</html>
