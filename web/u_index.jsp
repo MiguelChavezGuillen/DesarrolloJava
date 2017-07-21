@@ -8,13 +8,14 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/Header.jsp" %>
+<%--<%@ include file="/Header.jsp" %>--%>
 <html>
 <head>
   <title>Home</title>
-
+  <jsp:include page="i_csss.jsp" />
 </head>
 <body>
+    <jsp:include page="i_Header.jsp"/>
 <!-- Parte TUTORIAL -->
 <div id="gtco-services">
   <div class="gtco-container">
@@ -148,44 +149,18 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+        <s:iterator value="videos">
+            
+            <div class="col-md-4">
         <!-- IMAGEN PREVIA DE VIDEO -->
-        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(../../images/VIDEO.jpg) ">
+        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(https://i1.ytimg.com/vi/Y924hLJMEVM/hqdefault.jpg) ">
           <!-- VIDEO -->
-          <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
+          <a href="<s:property value="url"/>" class="popup-vimeo"><i class="icon-video"></i></a>
           <div class="overlay"></div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(../../images/Musica-Clasica.jpg); ">
-          <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
-          <div class="overlay"></div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(../../images/VIDEO.jpg); ">
-          <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
-          <div class="overlay"></div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(../../images/VIDEO.jpg) ">
-          <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
-          <div class="overlay"></div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(../../images/Musica-Clasica.jpg); ">
-          <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
-          <div class="overlay"></div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(../../images/VIDEO.jpg); ">
-          <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
-          <div class="overlay"></div>
-        </div>
-      </div>
+
+</s:iterator>
     </div>
   </div>
 </div>
@@ -234,6 +209,7 @@
   </div>
 </div>
 
-<%@ include file="/Footer.jsp" %>
+<jsp:include page="i_Footer.jsp"/>
+<jsp:include page="i_scripts.jsp"/>
 </body>
 </html>

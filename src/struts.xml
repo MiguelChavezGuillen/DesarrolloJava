@@ -10,7 +10,7 @@
     <package name="default" namespace="/" extends="struts-default">
         <default-action-ref name="index"></default-action-ref>
         <action name="index" class="pe.com.prueba.action.IndexAction">
-            <result type="dispatcher" name="success">Unregistered/index.jsp</result>
+            <result type="dispatcher" name="success">u_index.jsp</result>
         </action>
         <action name="instrumentos" class="pe.com.prueba.action.IndexAction">
             <result name="success">instrumentos.jsp</result>

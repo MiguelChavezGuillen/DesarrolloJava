@@ -15,7 +15,7 @@ public class LessonsMusicEntity extends BaseEntity{
     private static final String TABLE = "lessons_music";
     private TutorsEntity tutorsEntity;
     private InstrumentsEntity instrumentsEntity;
-    protected LessonsMusicEntity(Connection connection) {
+    public LessonsMusicEntity(Connection connection) {
         super(connection);
     }
     private List<LessonMusic> findByCriteria(final String criteria) {
@@ -45,4 +45,13 @@ public class LessonsMusicEntity extends BaseEntity{
         List<LessonMusic> lessonMusics = this.findByCriteria(DEFAULT_SQL+TABLE+" as i WHERE i.id="+id+" ;");
         return lessonMusics.get(0);
     }
+
+    public void setTutorsEntity(TutorsEntity tutorsEntity) {
+        this.tutorsEntity = tutorsEntity;
+    }
+
+    public void setInstrumentsEntity(InstrumentsEntity instrumentsEntity) {
+        this.instrumentsEntity = instrumentsEntity;
+    }
+    
 }

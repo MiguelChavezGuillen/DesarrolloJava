@@ -24,7 +24,6 @@ public class InstrumentTypesEntity extends BaseEntity {
 
             ResultSet rs = getConnection().createStatement().executeQuery(criteria);
             while(rs.next()) {
-                System.err.println(rs.getString(1)+rs.getString(2));
                 typesInstrument.add( new InstrumentType(
                         rs.getInt("id"),
                         rs.getString("name"),

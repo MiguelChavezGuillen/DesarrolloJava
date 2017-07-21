@@ -1,16 +1,19 @@
 package pe.com.prueba.service;
 
-import com.sun.media.jfxmedia.logging.Logger;
+
 import pe.com.prueba.modelEntity.CourseLevelsEntity;
 import pe.com.prueba.modelEntity.InstrumentTypesEntity;
 import pe.com.prueba.modelEntity.InstrumentsEntity;
-import sun.rmi.runtime.Log;
-
 import javax.naming.InitialContext;
+
+
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import pe.com.prueba.modelEntity.LessonsMusicEntity;
+import pe.com.prueba.modelEntity.TutorsEntity;
+import pe.com.prueba.modelEntity.VideosEntity;
 
 /**
  * Created by Fjorsvartnir on 25/06/2017.
@@ -20,6 +23,9 @@ abstract class BaseService {
     private CourseLevelsEntity courseLevelsEntity;
     private InstrumentTypesEntity instrumentTypesEntity;
     private InstrumentsEntity instrumentsEntity;
+    private VideosEntity videosEntity;
+    private LessonsMusicEntity lessonsMusicEntity;
+    private TutorsEntity tutorsEntity;
 
 
 
@@ -64,4 +70,37 @@ abstract class BaseService {
         }
         return instrumentsEntity;
     }
+
+    public CourseLevelsEntity getCourseLevelsEntity() {
+        if(courseLevelsEntity == null ){
+            courseLevelsEntity = new CourseLevelsEntity(getConnection());
+        }
+        return courseLevelsEntity;
+    }
+
+    public VideosEntity getVideosEntity() {
+        if(videosEntity == null){
+            videosEntity = new VideosEntity(getConnection());
+            videosEntity.setLessonsMusicEntity(getLessonsMusicEntity());
+        }
+        return videosEntity;
+    }
+
+    public LessonsMusicEntity getLessonsMusicEntity() {
+        if(lessonsMusicEntity == null){
+            lessonsMusicEntity = new LessonsMusicEntity(getConnection());
+            lessonsMusicEntity.setInstrumentsEntity(getInstrumentsEntity());
+            lessonsMusicEntity.setTutorsEntity(getTutorsEntity());
+        }
+        return lessonsMusicEntity;
+    }
+
+    public TutorsEntity getTutorsEntity() {
+        if(tutorsEntity == null){
+            tutorsEntity = new TutorsEntity(getConnection());
+        }
+        return tutorsEntity;
+    }
+    
+    
 }
