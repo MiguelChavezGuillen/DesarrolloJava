@@ -71,14 +71,14 @@ abstract class BaseService {
         return instrumentsEntity;
     }
 
-    public CourseLevelsEntity getCourseLevelsEntity() {
+    protected CourseLevelsEntity getCourseLevelsEntity() {
         if(courseLevelsEntity == null ){
             courseLevelsEntity = new CourseLevelsEntity(getConnection());
         }
         return courseLevelsEntity;
     }
 
-    public VideosEntity getVideosEntity() {
+    protected VideosEntity getVideosEntity() {
         if(videosEntity == null){
             videosEntity = new VideosEntity(getConnection());
             videosEntity.setLessonsMusicEntity(getLessonsMusicEntity());
@@ -86,7 +86,7 @@ abstract class BaseService {
         return videosEntity;
     }
 
-    public LessonsMusicEntity getLessonsMusicEntity() {
+    protected LessonsMusicEntity getLessonsMusicEntity() {
         if(lessonsMusicEntity == null){
             lessonsMusicEntity = new LessonsMusicEntity(getConnection());
             lessonsMusicEntity.setInstrumentsEntity(getInstrumentsEntity());
@@ -95,7 +95,7 @@ abstract class BaseService {
         return lessonsMusicEntity;
     }
 
-    public TutorsEntity getTutorsEntity() {
+    protected TutorsEntity getTutorsEntity() {
         if(tutorsEntity == null){
             tutorsEntity = new TutorsEntity(getConnection());
         }
