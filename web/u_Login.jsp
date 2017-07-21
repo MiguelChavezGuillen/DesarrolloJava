@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>LOG IN</title>
-    <jsp:include page="../bootstrap.jsp"/>
+    <jsp:include page="i_csss.jsp"/>
 </head>
 <body>
 <div id="gtco-features"  >
@@ -42,7 +42,7 @@
         </div>
     </div>
 </div>
-
-<%@ include file="../../Footer.jsp" %>
+<jsp:include page="i_Footer.jsp"/>
+<jsp:include page="i_scripts.jsp"/>
 </body>
 </html>

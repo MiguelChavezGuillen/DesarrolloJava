@@ -8,16 +8,16 @@ public class Event {
     private String photo;
     private String url;
     private String title;
-    private String descripcion;
+    private String description;
     private String date;
     private Administrator administrator;
 
-    public Event(int id, String photo, String url, String title, String descripcion, String date, Administrator administrator) {
+    public Event(int id, String photo, String url, String title, String description, String date, Administrator administrator) {
         this.id = id;
         this.photo = photo;
         this.url = url;
         this.title = title;
-        this.descripcion = descripcion;
+        this.description = description;
         this.date = date;
         this.administrator = administrator;
     }
@@ -54,12 +54,12 @@ public class Event {
         this.title = title;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getDate() {

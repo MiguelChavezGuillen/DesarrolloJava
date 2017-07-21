@@ -1,9 +1,8 @@
 package pe.com.prueba.service;
 
 
-import pe.com.prueba.modelEntity.CourseLevelsEntity;
-import pe.com.prueba.modelEntity.InstrumentTypesEntity;
-import pe.com.prueba.modelEntity.InstrumentsEntity;
+import pe.com.prueba.modelEntity.*;
+
 import javax.naming.InitialContext;
 
 
@@ -11,9 +10,6 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
-import pe.com.prueba.modelEntity.LessonsMusicEntity;
-import pe.com.prueba.modelEntity.TutorsEntity;
-import pe.com.prueba.modelEntity.VideosEntity;
 
 /**
  * Created by Fjorsvartnir on 25/06/2017.
@@ -26,6 +22,8 @@ abstract class BaseService {
     private VideosEntity videosEntity;
     private LessonsMusicEntity lessonsMusicEntity;
     private TutorsEntity tutorsEntity;
+    private EventsEntity eventsEntity;
+    private AdministratorsEntity administratorsEntity;
 
 
 
@@ -101,6 +99,19 @@ abstract class BaseService {
         }
         return tutorsEntity;
     }
-    
-    
+
+    public AdministratorsEntity getAdministratorsEntity() {
+        if(administratorsEntity == null){
+            administratorsEntity = new AdministratorsEntity(getConnection());
+        }
+        return administratorsEntity;
+    }
+
+    protected EventsEntity getEventsEntity() {
+        if (eventsEntity == null){
+            eventsEntity = new EventsEntity(getConnection());
+            eventsEntity.setAdministratorsEntity(getAdministratorsEntity());
+        }
+        return eventsEntity;
+    }
 }

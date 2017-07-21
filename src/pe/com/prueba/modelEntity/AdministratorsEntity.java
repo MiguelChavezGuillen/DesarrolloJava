@@ -15,7 +15,7 @@ import java.util.List;
 public class AdministratorsEntity extends BaseEntity {
     private static final String TABLE="administrators";
 
-    protected AdministratorsEntity(Connection connection) {
+    public AdministratorsEntity(Connection connection) {
         super(connection);
     }
 
@@ -30,15 +30,14 @@ public class AdministratorsEntity extends BaseEntity {
                         rs.getString(3)
                 ));
             }
-            rs.close();
-            getConnection().close();
         } catch (SQLException e) {
             System.err.println("ERROR: "+e.getSQLState()+"|"+e.getMessage());
             e.printStackTrace();
-        }
-        finally {
             return administrators;
         }
+
+        return administrators;
+
     }
     public Administrator findById(int id){
         List<Administrator> administrators = findByCriteria(DEFAULT_SQL+TABLE+" as it WHERE it.id="+id+";");

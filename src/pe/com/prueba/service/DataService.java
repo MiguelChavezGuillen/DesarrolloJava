@@ -1,5 +1,6 @@
 package pe.com.prueba.service;
 
+import pe.com.prueba.model.Event;
 import pe.com.prueba.model.Instrument;
 
 import java.util.List;
@@ -16,5 +17,9 @@ public class DataService extends BaseService {
     
     public List<Video> getVideos(){
         return this.getVideosEntity().findAll();
+    }
+
+    public List<Event> getAllEvents(){
+        return this.getEventsEntity().findAll();
     }
 }

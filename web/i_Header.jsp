@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: juanmendieta
@@ -29,8 +30,8 @@
                             </ul>
                         </li>
                         <li><a href="#">Tutores</a></li>
-                        <li><a href="#">Registrate</a></li>
-                        <li><a href="#">Sign In</a></li>
+                        <li><a href="registro">Registrate</a></li>
+                        <li><a href="login">Sign In</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,8 +48,8 @@
                             <h1>Mensaje de Bienvenida</h1>
                             <h2>Si aprender de musica quieres, registrarte debes</h2>
                             <p>
-                                <a href="#" class="btn btn-primary btn-lg">Registrarse</a>
-                                <a href="#" class="btn btn-white btn-outline btn-lg">Login</a></p>
+                                <a href="registro" class="btn btn-primary btn-lg">Registrarse</a>
+                                <a href="login" class="btn btn-white btn-outline btn-lg">Login</a></p>
                         </div>
                     </div>
                 </div>

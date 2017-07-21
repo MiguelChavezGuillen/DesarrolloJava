@@ -15,5 +15,14 @@
         <action name="instrumentos" class="pe.com.prueba.action.IndexAction">
             <result name="success">instrumentos.jsp</result>
         </action>
+        <action name="registro">
+            <result>u_UserRegister.jsp</result>
+        </action>
+        <action name="login">
+            <result>u_Login.jsp</result>
+        </action>
+        <action name="eventos" class="pe.com.prueba.action.EventAction">
+            <result name="success">u_Events.jsp</result>
+        </action>
     </package>
 </struts>

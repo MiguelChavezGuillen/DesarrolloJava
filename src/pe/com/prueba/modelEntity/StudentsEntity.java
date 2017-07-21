@@ -33,8 +33,7 @@ public class StudentsEntity extends BaseEntity {
                         rs.getString(1)
                 ));
             }
-            rs.close();
-            getConnection().close();
+
         } catch (SQLException e) {
             System.err.println("ERROR: "+e.getSQLState()+"|"+e.getMessage());
             e.printStackTrace();
