@@ -100,7 +100,7 @@ abstract class BaseService {
         return tutorsEntity;
     }
 
-    public AdministratorsEntity getAdministratorsEntity() {
+    protected AdministratorsEntity getAdministratorsEntity() {
         if(administratorsEntity == null){
             administratorsEntity = new AdministratorsEntity(getConnection());
         }

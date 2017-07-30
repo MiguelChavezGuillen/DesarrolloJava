@@ -22,4 +22,8 @@ public class DataService extends BaseService {
     public List<Event> getAllEvents(){
         return this.getEventsEntity().findAll();
     }
+    
+    public boolean getLogin(String user, String pass){
+        return getAdministratorsEntity().findCredentials(user, pass);
+    }
 }

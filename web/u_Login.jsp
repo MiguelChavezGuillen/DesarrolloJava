@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: juanmendieta
@@ -6,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <title>LOG IN</title>
@@ -16,17 +18,18 @@
     <div class="gtco-container">
         <div class="row">
             <h2>Sign In</h2>
-            <form class="form-horizontal">
+            <form action="<s:url value="login.action"/>" class="form-horizontal" method="post">
                 <div class="form-group">
                     <label for="mail" class="col-sm-2 control-label">Email:</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="mail" >
+                        <input name="user" type="email" class="form-control" id="mail" >
                     </div>
+
                 </div>
                 <div class="form-group">
                     <label for="pass" class="col-sm-2 control-label">Contraseña:</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="pass">
+                        <input name="pass" type="password" class="form-control" id="pass">
                     </div>
                 </div>
 

@@ -6,13 +6,14 @@ import pe.com.prueba.model.Instrument;
 
 import java.util.List;
 import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
 import pe.com.prueba.model.Video;
 import pe.com.prueba.service.DataService;
 
 /**
  * Created by Fjorsvartnir on 25/06/2017.
  */
-public class IndexAction extends ActionSupport {
+public class IndexAction extends ActionSupport implements SessionAware{
     private Map<String,Object> session;
     private List<Instrument> instruments;
     private List<Video> videos;
@@ -41,6 +42,11 @@ public class IndexAction extends ActionSupport {
 
     public void setVideos(List<Video> videos) {
         this.videos = videos;
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        this.session=map;
     }
     
 }

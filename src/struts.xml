@@ -18,11 +18,22 @@
         <action name="registro">
             <result>u_UserRegister.jsp</result>
         </action>
-        <action name="login">
-            <result>u_Login.jsp</result>
+        <action name="login" class="pe.com.prueba.action.LoginAction">
+            <result name="success">u_Login.jsp</result>
+            <result name="error">a_error.jsp</result>
+            <result name="login" type="redirectAction">home</result>
         </action>
         <action name="eventos" class="pe.com.prueba.action.EventAction">
             <result name="success">u_Events.jsp</result>
         </action>
+        <action name="home">
+            <result>r_Home.jsp</result>
+        </action>
+<!--         <action name="*Login" 
+                class="pe.com.prueba.action.LoginAction"
+                method="{1}">
+            <result name="success">showOrderStatus.jsp</result>
+            <result name="error">a_error.jsp</result>
+        </action>-->
     </package>
 </struts>

@@ -46,6 +46,24 @@ public class AdministratorsEntity extends BaseEntity {
     public List<Administrator> findAll(){
         return this.findByCriteria(DEFAULT_SQL+TABLE);
     }
+    
+    
+    public boolean findCredentials(String user, String pass){
+        String sql = "SELECT count(*) as result FROM administrators AS a WHERE a.email = '"+user+"' AND a.password = '"+pass+"' ;";
+        boolean credential = false;
+        try{
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            rs.next();
+            if(rs.getInt(1)==1){
+                credential = true ;
+            }
+            rs.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+            return credential;
+        }
+        return credential;
+    }
 
 
 }
