@@ -18,6 +18,8 @@ public class ActivitiesEntity extends BaseEntity {
     protected ActivitiesEntity(Connection connection) {
         super(connection);
     }
+    
+
     private List<Activity> findByCriteria(final String criteria) {
         List<Activity> tutors = new ArrayList<>();
         try {

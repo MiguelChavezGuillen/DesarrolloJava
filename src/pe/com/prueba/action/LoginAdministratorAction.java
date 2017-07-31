@@ -15,15 +15,15 @@ import pe.com.prueba.service.DataService;
  *
  * @author Fjorsvartnir
  */
-public class LoginAction extends ActionSupport implements SessionAware{
+public class LoginAdministratorAction extends ActionSupport implements SessionAware{
     private Map<String,Object> session;
-
     private String user;
     private String pass;
     @Override
     public String execute(){
         return SUCCESS;
     }
+
 
 
     public String getUser() { return user; }

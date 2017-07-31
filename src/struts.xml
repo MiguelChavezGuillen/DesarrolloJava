@@ -20,7 +20,7 @@
         </action>
         <action name="login" class="pe.com.prueba.action.LoginAction">
             <result name="success">u_Login.jsp</result>
-            <result name="error">a_error.jsp</result>
+            <result name="error">all_error.jsp</result>
             <result name="login" type="redirectAction">home</result>
         </action>
         <action name="eventos" class="pe.com.prueba.action.EventAction">
@@ -35,5 +35,22 @@
             <result name="success">showOrderStatus.jsp</result>
             <result name="error">a_error.jsp</result>
         </action>-->
+    </package>
+    <package name="administrator" namespace="/administrator" extends="struts-default">
+        <action name="*Login" class="pe.com.prueba.action.LoginAdministratorAction" method="{1}">
+            <result name="success">ad_login.jsp</result>
+            <result name="login" type="redirectAction">showAdministrator</result>
+            <result name="error" >all_error.jsp</result>
+        </action>
+        <action name="*Administrator"
+                class="pe.com.prueba.action.AdministratorAction"
+                method="{1}">
+            <result name="success" type="redirectAction">home</result>
+            <result name="error">all_error.jsp</result>
+        </action>
+        <action name="home" class="pe.com.prueba.action.AdministratorAction" method="show">
+            <result name="success">ad_home.jsp</result>
+            <result name="error">all_error.jsp</result>
+        </action>
     </package>
 </struts>

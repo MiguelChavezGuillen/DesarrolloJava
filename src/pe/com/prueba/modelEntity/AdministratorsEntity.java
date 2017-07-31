@@ -65,5 +65,11 @@ public class AdministratorsEntity extends BaseEntity {
         return credential;
     }
 
+    public boolean createAdministrator(String user, String pass, String name){ 
+        return this.updateByCriteria("INSERT INTO `bd_app_music`.`administrators`(`email`, `password`, `name`) VALUES ('"+(user.equals(null) ? "" : user) +"', '"+(pass.equals(null) ? "" : pass)+"', '"+(name.equals(null) ? "" : name)+"')");
+    }
 
+    public boolean deleteAdministrator(int id){
+        return this.updateByCriteria("DELETE FROM `bd_app_music`.`administrators` WHERE `id` = "+id);
+    }
 }
