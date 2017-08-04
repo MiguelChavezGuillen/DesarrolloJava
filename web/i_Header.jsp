@@ -38,7 +38,7 @@
 
         </div>
     </nav>
-    <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(../../images/Musica-Clasica.jpg);">
+    <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/Musica-Clasica.jpg);">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">

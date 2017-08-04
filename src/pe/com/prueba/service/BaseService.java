@@ -9,6 +9,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
@@ -31,7 +32,8 @@ abstract class BaseService {
         try{
             if (connection == null){
                   InitialContext ctx = new InitialContext();
-                  connection = ((DataSource) ctx.lookup("jdbc/MySQLDataSourcebdmusica")).getConnection();
+                  //connection = ((DataSource) ctx.lookup("jdbc/MySQLDataSourcebdmus")).getConnection();
+                  connection= DriverManager.getConnection("jdbc:mysql://localhost/bd_app_music", "root", "root");
             }
         }catch (NamingException e) {
             System.err.println("Error  naming exception");
@@ -100,7 +102,7 @@ abstract class BaseService {
         return tutorsEntity;
     }
 
-    protected AdministratorsEntity getAdministratorsEntity() {
+    public AdministratorsEntity getAdministratorsEntity() {
         if(administratorsEntity == null){
             administratorsEntity = new AdministratorsEntity(getConnection());
         }

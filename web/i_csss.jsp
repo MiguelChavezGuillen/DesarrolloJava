@@ -18,5 +18,6 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-
+<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="js/respond.min.js"></script>
 

@@ -8,49 +8,103 @@
     <!--<constant name="struts.action.extension" value="html"/>-->
     <constant name="struts.devMode" value="true" />
     <package name="default" namespace="/" extends="struts-default">
-        <default-action-ref name="index"></default-action-ref>
+
+        <interceptors>
+            <interceptor name="authentication" class="pe.com.prueba.action.AuthenticationInterceptor"></interceptor>
+            <interceptor-stack name="authStack">
+                <interceptor-ref name="authentication"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+
+
+        <global-results>
+            <result name="LOGIN" type="redirectAction">login</result>
+            <result name="HOME" type="redirectAction">home</result>
+        </global-results>
+
+
+
+
+
         <action name="index" class="pe.com.prueba.action.IndexAction">
+
             <result type="dispatcher" name="success">u_index.jsp</result>
         </action>
+
         <action name="instrumentos" class="pe.com.prueba.action.IndexAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
             <result name="success">instrumentos.jsp</result>
         </action>
         <action name="registro">
+            <interceptor-ref name="authStack"></interceptor-ref>
             <result>u_UserRegister.jsp</result>
         </action>
-        <action name="login" class="pe.com.prueba.action.LoginAction">
-            <result name="success">u_Login.jsp</result>
-            <result name="error">all_error.jsp</result>
-            <result name="login" type="redirectAction">home</result>
-        </action>
+
         <action name="eventos" class="pe.com.prueba.action.EventAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
             <result name="success">u_Events.jsp</result>
         </action>
-        <action name="home">
-            <result>r_Home.jsp</result>
+
+        <action name="welcome" method="execute" class="pe.com.prueba.action.WelcomeAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
+            <result name="SUCCESS">welcome.jsp</result>
         </action>
-<!--         <action name="*Login" 
-                class="pe.com.prueba.action.LoginAction"
-                method="{1}">
-            <result name="success">showOrderStatus.jsp</result>
-            <result name="error">a_error.jsp</result>
-        </action>-->
-    </package>
-    <package name="administrator" namespace="/administrator" extends="struts-default">
-        <action name="*Login" class="pe.com.prueba.action.LoginAdministratorAction" method="{1}">
-            <result name="success">ad_login.jsp</result>
-            <result name="login" type="redirectAction">showAdministrator</result>
-            <result name="error" >all_error.jsp</result>
+
+
+        <action name="home" method="execute" class="pe.com.prueba.action.HomeAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
+            <result name="SUCCESS">inicio.jsp</result>
+            <result name="ERROR">error.jsp</result>
         </action>
-        <action name="*Administrator"
-                class="pe.com.prueba.action.AdministratorAction"
-                method="{1}">
-            <result name="success" type="redirectAction">home</result>
-            <result name="error">all_error.jsp</result>
+
+        <action name="login" method="execute" class="pe.com.prueba.action.LoginAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
+            <result name="REDIRECT" type="redirect">${url}</result>
+            <result name="SUCCESS" type="redirectAction">home</result>
+            <result name="INPUT">login.jsp</result>
+            <result name="ERROR">error.jsp</result>
         </action>
-        <action name="home" class="pe.com.prueba.action.AdministratorAction" method="show">
-            <result name="success">ad_home.jsp</result>
-            <result name="error">all_error.jsp</result>
+
+        <action name="register" method="execute" class="pe.com.prueba.action.RegisterAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
+            <result name="SUCCESS" type="redirectAction">login</result>
+            <result name="INPUT">registro.jsp</result>
+            <result name="ERROR">error.jsp</result>
         </action>
+
+        <action name="logout" method="logout" class="pe.com.prueba.action.LoginAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
+            <result name="SUCCESS" type="redirectAction">index</result>
+        </action>
+
+        <action name="add" method="add" class="pe.com.prueba.action.CRUDAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
+            <result name="INPUT">CRUD.jsp</result>
+            <result name="SUCCESS" type="redirectAction">home</result>
+            <result name="ERROR">error.jsp</result>
+        </action>
+
+        <action name="edit" method="edit" class="pe.com.prueba.action.CRUDAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
+            <result name="INPUT">CRUD.jsp</result>
+            <result name="SUCCESS" type="redirectAction">home</result>
+            <result name="ERROR">error.jsp</result>
+        </action>
+
+        <action name="delete" method="delete" class="pe.com.prueba.action.CRUDAction">
+            <interceptor-ref name="authStack"></interceptor-ref>
+            <result name="INPUT">CRUD.jsp</result>
+            <result name="SUCCESS" type="redirectAction">home</result>
+            <result name="ERROR">error.jsp</result>
+        </action>
+
+        <action name="video" method="execute" class="pe.com.prueba.action.VideoAction">
+
+            <result name="SUCCESS">video.jsp</result>
+            <result name="ERROR">error.jsp</result>
+        </action>
+
     </package>
 </struts>

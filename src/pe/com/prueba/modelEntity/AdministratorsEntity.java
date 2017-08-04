@@ -46,30 +46,6 @@ public class AdministratorsEntity extends BaseEntity {
     public List<Administrator> findAll(){
         return this.findByCriteria(DEFAULT_SQL+TABLE);
     }
-    
-    
-    public boolean findCredentials(String user, String pass){
-        String sql = "SELECT count(*) as result FROM administrators AS a WHERE a.email = '"+user+"' AND a.password = '"+pass+"' ;";
-        boolean credential = false;
-        try{
-            ResultSet rs = getConnection().createStatement().executeQuery(sql);
-            rs.next();
-            if(rs.getInt(1)==1){
-                credential = true ;
-            }
-            rs.close();
-        }catch(SQLException e){
-            e.printStackTrace();
-            return credential;
-        }
-        return credential;
-    }
 
-    public boolean createAdministrator(String user, String pass, String name){ 
-        return this.updateByCriteria("INSERT INTO `bd_app_music`.`administrators`(`email`, `password`, `name`) VALUES ('"+(user.equals(null) ? "" : user) +"', '"+(pass.equals(null) ? "" : pass)+"', '"+(name.equals(null) ? "" : name)+"')");
-    }
 
-    public boolean deleteAdministrator(int id){
-        return this.updateByCriteria("DELETE FROM `bd_app_music`.`administrators` WHERE `id` = "+id);
-    }
 }

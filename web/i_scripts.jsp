@@ -22,7 +22,5 @@
   <script src="js/magnific-popup-options.js"></script>
   <!-- Main -->
   <script src="js/main.js"></script>
-  
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/respond.min.js"></script>
+
   

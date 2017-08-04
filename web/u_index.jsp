@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
 <%--
   Created by IntelliJ IDEA.
   User: Fjorsvartnir
@@ -12,10 +13,14 @@
 <html>
 <head>
   <title>Home</title>
-  <jsp:include page="i_csss.jsp" />
+  <jsp:include page="<%= "styles.jsp" %>" />
 </head>
 <body>
-    <jsp:include page="i_Header.jsp"/>
+
+<div class="gtco-loader"></div>
+
+<div id="page">
+  <jsp:include page="<%= "header.jsp" %>" />
 <!-- Parte TUTORIAL -->
 <div id="gtco-services">
   <div class="gtco-container">
@@ -37,9 +42,9 @@
           <div class="gtco-tab-content tab-content active" data-tab-content="1">
             <div class="col-md-6">
               <!-- Imagen previa del video -->
-              <div class="gtco-video gtco-bg" style="background-image: url(../../images/VIDEO.jpg); ">
+              <div class="gtco-video gtco-bg" style="background-image: url(images/perfil.jpg); ">
                 <!-- video -->
-                <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
+                <a href="https://vimeo.com/50529254" class="popup-vimeo"><i class="icon-video"></i></a>
                 <div class="overlay"></div>
               </div>
             </div>
@@ -53,8 +58,8 @@
           <!-- tab BUSCA UN TUTOR -->
           <div class="gtco-tab-content tab-content" data-tab-content="2">
             <div class="col-md-6 col-md-push-6">
-              <div class="gtco-video gtco-bg" style="background-image: url(../../images/VIDEO.jpg); ">
-                <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
+              <div class="gtco-video gtco-bg" style="background-image: url(images/tutor.jpg); ">
+                <a href="https://vimeo.com/65882870" class="popup-vimeo"><i class="icon-video"></i></a>
                 <div class="overlay"></div>
               </div>
             </div>
@@ -80,8 +85,8 @@
           <!-- tab APRENDE -->
           <div class="gtco-tab-content tab-content" data-tab-content="3">
             <div class="col-md-6 col-md-push-6">
-              <div class="gtco-video gtco-bg" style="background-image: url(../../images/VIDEO.jpg); ">
-                <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
+              <div class="gtco-video gtco-bg" style="background-image: url(images/niveles.jpg); ">
+                <a href="https://vimeo.com/18562995" class="popup-vimeo"><i class="icon-video"></i></a>
                 <div class="overlay"></div>
               </div>
             </div>
@@ -120,7 +125,7 @@
           <div class="gtco-tab-content tab-content" data-tab-content="4">
             <div class="col-md-6">
               <div class="icon icon-xlg">
-                <i class="icon-box"></i>
+                <i class="icon-video"></i>
               </div>
             </div>
             <div class="col-md-6">
@@ -137,6 +142,15 @@
     </div>
   </div>
 </div>
+<i class="icon-video2"></i>
+    <i class="icon-video"></i>
+    <i class="icon-vimeo"></i>
+    <i class="icon-vimeo-with-circle"></i><i class="icon-vine"></i><i class="icon-vinyl"></i><i class="icon-address"></i><i class="icon-add-to-list"></i><i class="icon-aircraft-take-off"></i><i class="icon-check2"></i>
+    <i class="icon-fast-forward"></i><i class="icon-infinity"></i><i class="icon-power"></i><i class="icon-record"></i><i class="icon-"></i><i class="icon-aircraft-take-off"></i><i class="icon-check2"></i>
+
+
+
+
 
 <!-- LISTA DE VIDEOS -->
 <div id="gtco-features-2">
@@ -153,7 +167,7 @@
             
             <div class="col-md-4">
         <!-- IMAGEN PREVIA DE VIDEO -->
-        <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(https://i1.ytimg.com/vi/Y924hLJMEVM/hqdefault.jpg) ">
+          <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(images/<s:property value="id"/>.jpg) ">
           <!-- VIDEO -->
           <a href="<s:property value="url"/>" class="popup-vimeo"><i class="icon-video"></i></a>
           <div class="overlay"></div>
@@ -178,7 +192,7 @@
       <div class="col-md-4 col-sm-4">
         <div class="feature-center" data-animate-effect="fadeIn">
 						<span class="icon">
-							<i class="icon-eye"></i>
+							<i class="icon-record"></i>
 						</span>
           <h3>Basico</h3>
           <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. </p>
@@ -198,7 +212,7 @@
       <div class="col-md-4 col-sm-4">
         <div class="feature-center" data-animate-effect="fadeIn">
 						<span class="icon">
-							<i class="icon-power"></i>
+							<i class="icon-infinity"></i>
 						</span>
           <h3>Avanzado</h3>
           <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. </p>
@@ -209,7 +223,7 @@
   </div>
 </div>
 
-<jsp:include page="i_Footer.jsp"/>
-<jsp:include page="i_scripts.jsp"/>
+
+<jsp:include page="<%= "footer.jsp" %>" />
 </body>
 </html>
