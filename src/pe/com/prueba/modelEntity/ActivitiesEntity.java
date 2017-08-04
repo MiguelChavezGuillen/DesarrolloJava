@@ -1,5 +1,6 @@
 package pe.com.prueba.modelEntity;
 
+import org.omg.PortableInterceptor.ACTIVE;
 import pe.com.prueba.model.Activity;
 
 import java.sql.Connection;
@@ -18,8 +19,6 @@ public class ActivitiesEntity extends BaseEntity {
     protected ActivitiesEntity(Connection connection) {
         super(connection);
     }
-    
-
     private List<Activity> findByCriteria(final String criteria) {
         List<Activity> tutors = new ArrayList<>();
         try {
@@ -47,4 +46,22 @@ public class ActivitiesEntity extends BaseEntity {
         List<Activity> activities = this.findByCriteria(DEFAULT_SQL+TABLE+" as i WHERE i.id="+id+" ;");
         return activities.get(0);
     }
+    public boolean updatebyCriteria(String sql){
+        try {
+            return getConnection().createStatement().executeUpdate(sql)>0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean create(Activity activity){
+        return updatebyCriteria("INSERT INTO activities(title,description,datetime,tutor,instrument)" +
+        "VALUES('" + String.valueOf(activity.getTitle()) +"','" +
+        String.valueOf(activity.getDescription())+"','"+
+        String.valueOf(activity.getDateTime())+"',"+
+        String.valueOf(activity.getTutor().getId())+
+        String.valueOf(activity.getInstrument().getId()));
+    }
+
 }

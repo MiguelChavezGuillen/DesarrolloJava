@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: juanmendieta
@@ -7,36 +8,37 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <title>LOG IN</title>
     <jsp:include page="i_csss.jsp"/>
+
 </head>
 <body>
+<jsp:include page="i_Header.jsp"/>
 <div id="gtco-features"  >
     <div class="gtco-container">
         <div class="row">
             <h2>Sign In</h2>
-            <form action="<s:url value="login.action"/>" class="form-horizontal" method="post">
+            <form class="form-horizontal">
+                <s:form action="index" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal">
                 <div class="form-group">
                     <label for="mail" class="col-sm-2 control-label">Email:</label>
                     <div class="col-sm-10">
-                        <input name="user" type="email" class="form-control" id="mail" >
+                        <s:textfield name="mail" type="mail"/>
                     </div>
-
                 </div>
                 <div class="form-group">
                     <label for="pass" class="col-sm-2 control-label">Contraseña:</label>
                     <div class="col-sm-10">
-                        <input name="pass" type="password" class="form-control" id="pass">
+                        <s:password name="pass"/>
                     </div>
                 </div>
 
                 <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary btn-lg">Ingresar</button>
+                    <s:submit name="Save" cssClass="btn btn-primary btn-lg"/>
                 </div>
-            </form>
+                </s:form>
             <p>&nbsp;</p>
             <div class="col-md-12 text-right">
                 <p> Si aun no te haz registrado dale click en el boton &nbsp; &nbsp; &nbsp; &nbsp; <a type="button" class="btn btn-success btn-lg">Registrar</a> </p>

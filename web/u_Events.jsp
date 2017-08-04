@@ -14,6 +14,8 @@
     <jsp:include page="i_csss.jsp"/>
 </head>
 <body>
+<jsp:include page="i_Header.jsp"/>
+
 <div id="gtco-features">
 
     <div class="gtco-container">

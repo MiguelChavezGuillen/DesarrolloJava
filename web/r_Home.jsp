@@ -8,13 +8,13 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/Header.jsp" %>
 <html>
 <head>
   <title>Home</title>
-  <jsp:include page="i_csss.jsp"/>
+
 </head>
 <body>
-    <jsp:include page="i_Header.jsp"/>
 <div id="gtco-services">
   <div class="gtco-container">
 
@@ -219,7 +219,7 @@
     </div>
   </div>
 </div>
-    <jsp:include page="i_Footer.jsp"/>
-    <jsp:include page="i_scripts.jsp"/>
+
+<%@ include file="/Footer.jsp" %>
 </body>
 </html>
