@@ -33,8 +33,7 @@ public class StudentsEntity extends BaseEntity {
                         rs.getString(1)
                 ));
             }
-            rs.close();
-            getConnection().close();
+
         } catch (SQLException e) {
             System.err.println("ERROR: "+e.getSQLState()+"|"+e.getMessage());
             e.printStackTrace();
@@ -50,4 +49,13 @@ public class StudentsEntity extends BaseEntity {
         List<Student> students = findByCriteria(DEFAULT_SQL+TABLE+" as it WHERE it.id="+id+";");
         return students.isEmpty() ? new Student(id,"DESCONOCIDO","No se encontro tipo de instrument","","","","") : students.get(0) ;
     }
+    public boolean updatebyCriteria(String sql){
+        try {
+            return getConnection().createStatement().executeUpdate(sql)>0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }

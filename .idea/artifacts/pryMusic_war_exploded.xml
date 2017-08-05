@@ -8,6 +8,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Struts 2-2.3.20.1" />
+          <element id="library" level="project" name="struts2-bootstrap-plugin-2.5.1" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="pryMusic/web/Web" />

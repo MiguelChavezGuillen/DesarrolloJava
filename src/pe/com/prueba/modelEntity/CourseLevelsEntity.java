@@ -29,8 +29,7 @@ public class CourseLevelsEntity extends BaseEntity {
                         rs.getString("")
                 ));
             }
-            rs.close();
-            getConnection().close();
+
         } catch (SQLException e) {
             System.err.println("ERROR: "+e.getSQLState()+"|"+e.getMessage());
             e.printStackTrace();

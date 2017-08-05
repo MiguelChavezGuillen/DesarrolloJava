@@ -1,15 +1,15 @@
 package pe.com.prueba.service;
 
-import com.sun.media.jfxmedia.logging.Logger;
-import pe.com.prueba.modelEntity.CourseLevelsEntity;
-import pe.com.prueba.modelEntity.InstrumentTypesEntity;
-import pe.com.prueba.modelEntity.InstrumentsEntity;
-import sun.rmi.runtime.Log;
+
+import pe.com.prueba.modelEntity.*;
 
 import javax.naming.InitialContext;
+
+
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
@@ -20,6 +20,11 @@ abstract class BaseService {
     private CourseLevelsEntity courseLevelsEntity;
     private InstrumentTypesEntity instrumentTypesEntity;
     private InstrumentsEntity instrumentsEntity;
+    private VideosEntity videosEntity;
+    private LessonsMusicEntity lessonsMusicEntity;
+    private TutorsEntity tutorsEntity;
+    private EventsEntity eventsEntity;
+    private AdministratorsEntity administratorsEntity;
 
 
 
@@ -27,7 +32,8 @@ abstract class BaseService {
         try{
             if (connection == null){
                   InitialContext ctx = new InitialContext();
-                  connection = ((DataSource) ctx.lookup("jdbc/MySQLDataSourcebdmusica")).getConnection();
+                  //connection = ((DataSource) ctx.lookup("jdbc/MySQLDataSourcebdmus")).getConnection();
+                  connection= DriverManager.getConnection("jdbc:mysql://localhost/bd_app_music", "root", "root");
             }
         }catch (NamingException e) {
             System.err.println("Error  naming exception");
@@ -63,5 +69,51 @@ abstract class BaseService {
             instrumentsEntity.setInstrumentTypesEntity(getInstrumentTypesEntity());
         }
         return instrumentsEntity;
+    }
+
+    protected CourseLevelsEntity getCourseLevelsEntity() {
+        if(courseLevelsEntity == null ){
+            courseLevelsEntity = new CourseLevelsEntity(getConnection());
+        }
+        return courseLevelsEntity;
+    }
+
+    protected VideosEntity getVideosEntity() {
+        if(videosEntity == null){
+            videosEntity = new VideosEntity(getConnection());
+            videosEntity.setLessonsMusicEntity(getLessonsMusicEntity());
+        }
+        return videosEntity;
+    }
+
+    protected LessonsMusicEntity getLessonsMusicEntity() {
+        if(lessonsMusicEntity == null){
+            lessonsMusicEntity = new LessonsMusicEntity(getConnection());
+            lessonsMusicEntity.setInstrumentsEntity(getInstrumentsEntity());
+            lessonsMusicEntity.setTutorsEntity(getTutorsEntity());
+        }
+        return lessonsMusicEntity;
+    }
+
+    protected TutorsEntity getTutorsEntity() {
+        if(tutorsEntity == null){
+            tutorsEntity = new TutorsEntity(getConnection());
+        }
+        return tutorsEntity;
+    }
+
+    public AdministratorsEntity getAdministratorsEntity() {
+        if(administratorsEntity == null){
+            administratorsEntity = new AdministratorsEntity(getConnection());
+        }
+        return administratorsEntity;
+    }
+
+    protected EventsEntity getEventsEntity() {
+        if (eventsEntity == null){
+            eventsEntity = new EventsEntity(getConnection());
+            eventsEntity.setAdministratorsEntity(getAdministratorsEntity());
+        }
+        return eventsEntity;
     }
 }

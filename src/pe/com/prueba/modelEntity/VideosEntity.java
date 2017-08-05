@@ -14,7 +14,7 @@ import java.util.List;
 public class VideosEntity extends BaseEntity {
     private static final String TABLE = "videos";
     private LessonsMusicEntity lessonsMusicEntity;
-    protected VideosEntity(Connection connection) {
+    public VideosEntity(Connection connection) {
         super(connection);
     }
     private List<Video> findByCriteria(final String criteria) {
@@ -41,8 +41,16 @@ public class VideosEntity extends BaseEntity {
         return tutors;
 
     }
+    public List<Video> findAll(){
+        return this.findByCriteria(DEFAULT_SQL+TABLE);
+    }
     public Video findById(int id){
         List<Video> lessonLevels = this.findByCriteria(DEFAULT_SQL+TABLE+" as i WHERE i.id="+id+" ;");
         return lessonLevels.get(0);
     }
+
+    public void setLessonsMusicEntity(LessonsMusicEntity lessonsMusicEntity) {
+        this.lessonsMusicEntity = lessonsMusicEntity;
+    }
+    
 }

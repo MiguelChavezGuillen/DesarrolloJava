@@ -15,7 +15,7 @@ import java.util.List;
 public class EventsEntity extends BaseEntity {
     private AdministratorsEntity administratorsEntity;
     private static final String TABLE="events";
-    protected EventsEntity(Connection connection) {
+    public EventsEntity(Connection connection) {
         super(connection);
     }
     private List<Event> findByCriteria(String criteria) {
@@ -28,20 +28,19 @@ public class EventsEntity extends BaseEntity {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
-                        rs.getString(4),
-                        rs.getString(4),getAdministratorsEntity().findById(rs.getInt(1))
+                        rs.getString(5),
+                        rs.getString(6),
+                        getAdministratorsEntity().findById(rs.getInt(7))
 
                 ));
             }
-            rs.close();
-            getConnection().close();
+            return events;
         } catch (SQLException e) {
             System.err.println("ERROR: "+e.getSQLState()+"|"+e.getMessage());
             e.printStackTrace();
-        }
-        finally {
             return events;
         }
+
     }
     public List<Event> findAll(){
         return this.findByCriteria(DEFAULT_SQL+TABLE);

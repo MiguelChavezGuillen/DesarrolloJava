@@ -30,8 +30,7 @@ public class StudentActivitiesEntity extends BaseEntity {
                     )
                 );
             }
-            rs.close();
-            getConnection().close();
+
         } catch (SQLException e) {
             System.err.println("ERROR: "+e.getSQLState()+"|"+e.getMessage());
             e.printStackTrace();

@@ -10,7 +10,22 @@ public class Video {
     private String description;
     private String url;
     private LessonMusic lessonMusic;
+    private String instrumento;
+    private int instrumentoId;
 
+
+    public Video() {
+    }
+
+    public Video(int id, int lessonMusicVideoNumber, String tittle, String description, String url, LessonMusic lessonMusic, String instrumento) {
+        this.id = id;
+        this.lessonMusicVideoNumber = lessonMusicVideoNumber;
+        this.tittle = tittle;
+        this.description = description;
+        this.url = url;
+        this.lessonMusic = lessonMusic;
+        this.setInstrumento(instrumento);
+    }
     public Video(int id, int lessonMusicVideoNumber, String tittle, String description, String url, LessonMusic lessonMusic) {
         this.id = id;
         this.lessonMusicVideoNumber = lessonMusicVideoNumber;
@@ -18,9 +33,6 @@ public class Video {
         this.description = description;
         this.url = url;
         this.lessonMusic = lessonMusic;
-    }
-
-    public Video() {
     }
 
     public int getId() {
@@ -69,5 +81,21 @@ public class Video {
 
     public void setLessonMusic(LessonMusic lessonMusic) {
         this.lessonMusic = lessonMusic;
+    }
+
+    public String getInstrumento() {
+        return instrumento;
+    }
+
+    public void setInstrumento(String instrumento) {
+        this.instrumento = instrumento;
+    }
+
+    public int getInstrumentoId() {
+        return instrumentoId;
+    }
+
+    public void setInstrumentoId(int instrumentoId) {
+        this.instrumentoId = instrumentoId;
     }
 }

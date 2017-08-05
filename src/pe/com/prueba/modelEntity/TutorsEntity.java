@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class TutorsEntity extends BaseEntity {
     private static final String TABLE = "tutors";
-    protected TutorsEntity(Connection connection) {
+    public TutorsEntity(Connection connection) {
         super(connection);
     }
 
@@ -31,7 +31,7 @@ public class TutorsEntity extends BaseEntity {
                         rs.getString(6),
                         rs.getString(7),
                         rs.getString(8),
-                        rs.getInt(9)
+                        rs.getString(9)
                 ));
             }
 
@@ -44,7 +44,7 @@ public class TutorsEntity extends BaseEntity {
 
     }
     public Tutor findById(int id){
-        List<Tutor> tutors = this.findByCriteria(DEFAULT_SQL+TABLE+" as i WHERE i.id="+id+" ;");
-        return tutors.get(0);
+        List<Tutor> tutors = this.findByCriteria("SELECT p.id, p.mail, p.first_name, p.last_name, p.PASSWORD, p.address, p.description, t.photo, t.experience FROM "+TABLE+" AS t INNER JOIN people AS p ON t.people_id = p.id WHERE t.people_id="+id+" ;");
+        return  tutors.get(0);
     }
 }

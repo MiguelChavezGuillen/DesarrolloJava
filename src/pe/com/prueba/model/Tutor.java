@@ -5,18 +5,18 @@ package pe.com.prueba.model;
  */
 public class Tutor extends People{
     private String photo;
-    private int experience;
+    private String experience;
 
     public Tutor() {
         super();
     }
 
-    public Tutor(String photo, int experience) {
+    public Tutor(String photo, String experience) {
         this.photo = photo;
         this.experience = experience;
     }
 
-    public Tutor(int id, String email, String firstName, String lastName, String password, String address, String description, String photo, int experience) {
+    public Tutor(int id, String email, String firstName, String lastName, String password, String address, String description, String photo, String experience) {
         super(id, email, firstName, lastName, password, address, description);
         this.photo = photo;
         this.experience = experience;
@@ -30,11 +30,13 @@ public class Tutor extends People{
         this.photo = photo;
     }
 
-    public int getExperience() {
+    public String getExperience() {
         return experience;
     }
 
-    public void setExperience(int experience) {
+    public void setExperience(String experience) {
         this.experience = experience;
     }
+
+
 }
