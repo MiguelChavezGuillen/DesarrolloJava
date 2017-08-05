@@ -1,17 +1,22 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Reporte Administradores</title>
-    <style>
-        table, td, th {border: 1px solid black;}
-        table {border-collapse: collapse;width: 60%;}
-        th {height: 30px;}
-        .button-update {background-color: #008CBA;color: white;}
-        .button-delete {background-color: red;color: white;}
-    </style>
+    <title>Welcome</title>
+    <jsp:include page="<%= "styles.jsp" %>" />
 </head>
 <body>
+
+<div class="gtco-loader"></div>
+
+<div id="page">
+    <jsp:include page="<%= "header.jsp" %>" />
+    <div id="gtco-services">
+        <div class="gtco-container">
+
+            <div class="row">
+                <div class="col-md-12">
     <h2>Reporte de Administradores</h2>
     <div style="margin-top: 40px;">
         <s:if test="noData=true">
@@ -51,5 +56,7 @@
             <button type="button">Registrar Admin</button>
         </a>
     </div>
+
+                    <jsp:include page="<%= "footer.jsp" %>" />
 </body>
 </html>

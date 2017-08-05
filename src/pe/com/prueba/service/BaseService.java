@@ -33,7 +33,7 @@ abstract class BaseService {
             if (connection == null){
                   InitialContext ctx = new InitialContext();
                   //connection = ((DataSource) ctx.lookup("jdbc/MySQLDataSourcebdmus")).getConnection();
-                  connection= DriverManager.getConnection("jdbc:mysql://localhost/bd_app_music", "root", "admin");
+                  connection= DriverManager.getConnection("jdbc:mysql://localhost/bd_app_music", "root", "root");
             }
         }catch (NamingException e) {
             System.err.println("Error  naming exception");

@@ -21,7 +21,7 @@ public class MusicDb {
         try {
             String URL = "jdbc:mysql://:3306/app_music";
             Class.forName("com.mysql.jdbc.Driver");
-            Connection = DriverManager.getConnection(URL, "root", "admin");
+            Connection = DriverManager.getConnection(URL, "root", "root");
             return Connection;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
