@@ -11,7 +11,7 @@ public class Entity {
     public static Connection getconnection() throws Exception{
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://:3306/bd_app_music","root","admin");
+            return DriverManager.getConnection("jdbc:mysql://:3306/app_music","root","admin");
         }catch (Exception e){
             e.printStackTrace();
             return null;

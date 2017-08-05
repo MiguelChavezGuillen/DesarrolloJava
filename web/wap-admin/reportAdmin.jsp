@@ -38,11 +38,11 @@
                         <td><s:property value="password" /></td>
                         <td><s:property value="name" /></td>
                         <td>
-                            <a class="btn btn-primary " href="updateAdmin.action?submitType=updatedata&id=<s:property value="id"/>">
-                                <button class="button-update">Update</button>
+                            <a  href="updateAdmin.action?submitType=updatedata&id=<s:property value="id"/>">
+                                <button class="btn btn-default">Update</button>
                             </a>
-                            <a class="btn btn-danger " href="deleteAdmin.action?id=<s:property value="id"/>">
-                                <button class="button-delete">Delete</button>
+                            <a  href="deleteAdmin.action?id=<s:property value="id"/>">
+                                <button class="btn btn-default">Delete</button>
                             </a>
                         </td>
                     </tr>

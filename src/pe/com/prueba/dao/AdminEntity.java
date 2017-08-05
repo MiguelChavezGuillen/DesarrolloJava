@@ -32,7 +32,7 @@ public class AdminEntity extends Entity {
     public ResultSet report() throws SQLException, Exception{
         ResultSet rs = null;
         try{
-            String sql="select * from bd_app_music.administrators";
+            String sql="select * from administrators";
             PreparedStatement ps = getconnection().prepareStatement(sql);
             rs=ps.executeQuery();
             return rs;
