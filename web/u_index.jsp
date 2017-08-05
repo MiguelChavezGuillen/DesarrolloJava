@@ -50,8 +50,8 @@
             </div>
             <div class="col-md-6">
               <h2>Crea un Perfil</h2>
-              <p>Paragraph placeat quis fugiat provident veritatis quia iure a debitis adipisci dignissimos consectetur magni quas eius nobis reprehenderit soluta eligendi quo reiciendis fugit? Veritatis tenetur odio delectus quibusdam officiis est.</p>
-              <p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis molestias totam fugiat soluta accusantium omnis quod similique placeat at. Dolorum ducimus libero fuga molestiae asperiores obcaecati corporis sint illo facilis.</p>
+              <p>Si deseas aprender a tocar instrumentos y en un futuro cercano ser un experiemntado músico, esta es tu oportunidad! contamos con mas de 2000 docentes dispuestas a ayudarte</p>
+              <p>Nuestra plataforma de música te permite crearte un perfil para que puedas tener acceso a todas las clases y videos de los docentes. No pierdas el tiempo y haslo ahora!</p>
             </div>
           </div>
 
@@ -65,17 +65,17 @@
             </div>
             <div class="col-md-6 col-md-pull-6">
               <h2>Busca un Tutor</h2>
-              <p>Paragraph placeat quis fugiat provident veritatis quia iure a debitis adipisci dignissimos consectetur magni quas eius nobis reprehenderit soluta eligendi quo reiciendis fugit? Veritatis tenetur odio delectus quibusdam officiis est.</p>
-              <p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis molestias totam fugiat soluta accusantium omnis quod similique placeat at. Dolorum ducimus libero fuga molestiae asperiores obcaecati corporis sint illo facilis.</p>
+              <p>En nuestra plataforma puedes buscar tutores que enseñan diferentes tipos de instrumentos como guitarra, piano, arpa, bateria, etc.</p>
+              <p>Nuestra plataforma no aloja los videos de aprendizaje, solo lo mostramos para que puedan visualizarlos en su dispositivo android, MAC o PC.</p>
 
               <div class="row">
                 <div class="col-md-6">
                   <h2 class="uppercase">Niveles</h2>
-                  <p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis</p>
+                  <p>Existen tres niveles de aprendizaje: Basico, Intermedio y avanzado</p>
                 </div>
                 <div class="col-md-6">
                   <h2 class="uppercase">Instrumentos</h2>
-                  <p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis</p>
+                  <p>Contamos con clases de diversos tipos de instrumentos de viendo, cuerda, percusión, etc.</p>
                 </div>
               </div>
 
@@ -130,8 +130,8 @@
             </div>
             <div class="col-md-6">
               <h2>Publica Videos</h2>
-              <p>Paragraph placeat quis fugiat provident veritatis quia iure a debitis adipisci dignissimos consectetur magni quas eius nobis reprehenderit soluta eligendi quo reiciendis fugit? Veritatis tenetur odio delectus quibusdam officiis est.</p>
-              <p>Ullam dolorum iure dolore dicta fuga ipsa velit veritatis molestias totam fugiat soluta accusantium omnis quod similique placeat at. Dolorum ducimus libero fuga molestiae asperiores obcaecati corporis sint illo facilis.</p>
+              <p>Puedes registrarte como docente y crear clases que pueden contener varios videos educativos. Esto ayudará a expandir la comunidad de músicos</p>
+              <p>Comparte con nosotros tus conocimientos, todo aquello que quieras mostrar a personas interesadas en la música lo puedes hacer con nosotros. Tu eres nuestro mayor participante, afiliate con nosotros!</p>
 
             </div>
           </div>
@@ -142,15 +142,6 @@
     </div>
   </div>
 </div>
-<i class="icon-video2"></i>
-    <i class="icon-video"></i>
-    <i class="icon-vimeo"></i>
-    <i class="icon-vimeo-with-circle"></i><i class="icon-vine"></i><i class="icon-vinyl"></i><i class="icon-address"></i><i class="icon-add-to-list"></i><i class="icon-aircraft-take-off"></i><i class="icon-check2"></i>
-    <i class="icon-fast-forward"></i><i class="icon-infinity"></i><i class="icon-power"></i><i class="icon-record"></i><i class="icon-"></i><i class="icon-aircraft-take-off"></i><i class="icon-check2"></i>
-
-
-
-
 
 <!-- LISTA DE VIDEOS -->
 <div id="gtco-features-2">

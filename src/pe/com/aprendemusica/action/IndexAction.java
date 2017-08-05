@@ -1,0 +1,46 @@
+package pe.com.aprendemusica.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+import pe.com.aprendemusica.model.Instrument;
+
+
+import java.util.List;
+import java.util.Map;
+import pe.com.aprendemusica.model.Video;
+import pe.com.aprendemusica.service.DataService;
+
+/**
+ * Created by Fjorsvartnir on 25/06/2017.
+ */
+public class IndexAction extends ActionSupport  {
+    private Map<String,Object> session;
+    private List<Instrument> instruments;
+    private List<Video> videos;
+
+    @Override
+    public String execute() throws Exception {
+        DataService service = new DataService();
+        setVideos(service.getVideos());
+        return SUCCESS;
+    }
+
+
+
+
+    public List<Instrument> getInstruments() {
+        return instruments;
+    }
+
+    public void setInstruments(List<Instrument> instruments) {
+        this.instruments = instruments;
+    }
+
+    public List<Video> getVideos() {
+        return videos;
+    }
+
+    public void setVideos(List<Video> videos) {
+        this.videos = videos;
+    }
+
+}

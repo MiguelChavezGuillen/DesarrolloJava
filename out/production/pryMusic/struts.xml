@@ -10,7 +10,7 @@
     <package name="default" namespace="/" extends="struts-default">
 
         <interceptors>
-            <interceptor name="authentication" class="pe.com.prueba.action.AuthenticationInterceptor"></interceptor>
+            <interceptor name="authentication" class="pe.com.aprendemusica.action.AuthenticationInterceptor"></interceptor>
             <interceptor-stack name="authStack">
                 <interceptor-ref name="authentication"></interceptor-ref>
                 <interceptor-ref name="defaultStack"></interceptor-ref>
@@ -24,37 +24,37 @@
             <result name="HOME" type="redirectAction">home</result>
         </global-results>
 
-        <action name="registerAdmin" class="pe.com.prueba.action.AdminRegister">
+        <action name="registerAdmin" class="pe.com.aprendemusica.action.AdminRegister">
             <result name="Register">/wap-admin/registerAdmin.jsp</result>
         </action>
-        <action name="reportAdmin" class="pe.com.prueba.action.AdminReport">
+        <action name="reportAdmin" class="pe.com.aprendemusica.action.AdminReport">
             <result name="Report">/wap-admin/reportAdmin.jsp</result>
         </action>
-        <action name="updateAdmin" class="pe.com.prueba.action.AdminUpdate">
+        <action name="updateAdmin" class="pe.com.aprendemusica.action.AdminUpdate">
             <result name="Update">/wap-admin/updateAdmin.jsp</result>
         </action>
-        <action name="deleteAdmin" class="pe.com.prueba.action.AdminDelete">
+        <action name="deleteAdmin" class="pe.com.aprendemusica.action.AdminDelete">
             <result name="Delete">/wap-admin/deleteAdmin.jsp</result>
         </action>
 
-        <action name="registerInstrument" class="pe.com.prueba.action.InstrumentTypesRegister">
+        <action name="registerInstrument" class="pe.com.aprendemusica.action.InstrumentTypesRegister">
             <result name="Register">/wap-admin/registerInstrumentType.jsp</result>
         </action>
-        <action name="reportInstrument" class="pe.com.prueba.action.InstrumentTypesReport">
+        <action name="reportInstrument" class="pe.com.aprendemusica.action.InstrumentTypesReport">
             <result name="Report">/wap-admin/reportInstrumentType.jsp</result>
         </action>
-        <action name="updateInstrument" class="pe.com.prueba.action.InstrumentTypesUpdate">
+        <action name="updateInstrument" class="pe.com.aprendemusica.action.InstrumentTypesUpdate">
             <result name="Update">/wap-admin/updateInstrumentType.jsp</result>
         </action>
-        <action name="deleteInstrument" class="pe.com.prueba.action.InstrumentTypesDelete">
+        <action name="deleteInstrument" class="pe.com.aprendemusica.action.InstrumentTypesDelete">
             <result name="Delete">/wap-admin/deleteInstrumentType.jsp</result>
         </action>
 
-        <action name="index" class="pe.com.prueba.action.IndexAction">
+        <action name="index" class="pe.com.aprendemusica.action.IndexAction">
             <result type="dispatcher" name="success">u_index.jsp</result>
         </action>
 
-        <action name="instrumentos" class="pe.com.prueba.action.IndexAction">
+        <action name="instrumentos" class="pe.com.aprendemusica.action.IndexAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="success">instrumentos.jsp</result>
         </action>
@@ -63,24 +63,24 @@
             <result>u_UserRegister.jsp</result>
         </action>
 
-        <action name="eventos" class="pe.com.prueba.action.EventAction">
+        <action name="eventos" class="pe.com.aprendemusica.action.EventAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="success">u_Events.jsp</result>
         </action>
 
-        <action name="welcome" method="execute" class="pe.com.prueba.action.WelcomeAction">
+        <action name="welcome" method="execute" class="pe.com.aprendemusica.action.WelcomeAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="SUCCESS">welcome.jsp</result>
         </action>
 
 
-        <action name="home" method="execute" class="pe.com.prueba.action.HomeAction">
+        <action name="home" method="execute" class="pe.com.aprendemusica.action.HomeAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="SUCCESS">inicio.jsp</result>
             <result name="ERROR">error.jsp</result>
         </action>
 
-        <action name="login" method="execute" class="pe.com.prueba.action.LoginAction">
+        <action name="login" method="execute" class="pe.com.aprendemusica.action.LoginAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="REDIRECT" type="redirect">${url}</result>
             <result name="SUCCESS" type="redirectAction">home</result>
@@ -88,40 +88,40 @@
             <result name="ERROR">error.jsp</result>
         </action>
 
-        <action name="register" method="execute" class="pe.com.prueba.action.RegisterAction">
+        <action name="register" method="execute" class="pe.com.aprendemusica.action.RegisterAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="SUCCESS" type="redirectAction">login</result>
             <result name="INPUT">registro.jsp</result>
             <result name="ERROR">error.jsp</result>
         </action>
 
-        <action name="logout" method="logout" class="pe.com.prueba.action.LoginAction">
+        <action name="logout" method="logout" class="pe.com.aprendemusica.action.LoginAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="SUCCESS" type="redirectAction">index</result>
         </action>
 
-        <action name="add" method="add" class="pe.com.prueba.action.CRUDAction">
+        <action name="add" method="add" class="pe.com.aprendemusica.action.CRUDAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="INPUT">CRUD.jsp</result>
             <result name="SUCCESS" type="redirectAction">home</result>
             <result name="ERROR">error.jsp</result>
         </action>
 
-        <action name="edit" method="edit" class="pe.com.prueba.action.CRUDAction">
+        <action name="edit" method="edit" class="pe.com.aprendemusica.action.CRUDAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="INPUT">CRUD.jsp</result>
             <result name="SUCCESS" type="redirectAction">home</result>
             <result name="ERROR">error.jsp</result>
         </action>
 
-        <action name="delete" method="delete" class="pe.com.prueba.action.CRUDAction">
+        <action name="delete" method="delete" class="pe.com.aprendemusica.action.CRUDAction">
             <interceptor-ref name="authStack"></interceptor-ref>
             <result name="INPUT">CRUD.jsp</result>
             <result name="SUCCESS" type="redirectAction">home</result>
             <result name="ERROR">error.jsp</result>
         </action>
 
-        <action name="video" method="execute" class="pe.com.prueba.action.VideoAction">
+        <action name="video" method="execute" class="pe.com.aprendemusica.action.VideoAction">
 
             <result name="SUCCESS">video.jsp</result>
             <result name="ERROR">error.jsp</result>
