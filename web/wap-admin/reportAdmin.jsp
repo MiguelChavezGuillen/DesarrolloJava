@@ -38,10 +38,10 @@
                         <td><s:property value="password" /></td>
                         <td><s:property value="name" /></td>
                         <td>
-                            <a href="updateAdmin.action?submitType=updatedata&id=<s:property value="id"/>">
+                            <a class="btn btn-primary " href="updateAdmin.action?submitType=updatedata&id=<s:property value="id"/>">
                                 <button class="button-update">Update</button>
                             </a>
-                            <a href="deleteAdmin.action?id=<s:property value="id"/>">
+                            <a class="btn btn-danger " href="deleteAdmin.action?id=<s:property value="id"/>">
                                 <button class="button-delete">Delete</button>
                             </a>
                         </td>
@@ -57,6 +57,12 @@
         </a>
     </div>
 
-                    <jsp:include page="<%= "footer.jsp" %>" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        <jsp:include page="<%= "footer.jsp" %>" />
 </body>
 </html>
