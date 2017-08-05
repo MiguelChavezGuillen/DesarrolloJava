@@ -35,7 +35,7 @@
                         <div class="gtco-video gtco-video-sm gtco-bg" style="background-image: url(images/<s:property value="id"/>.jpg) ">
                             <!-- VIDEO -->
                             <a href="<s:property value="url"/>" class="popup-vimeo"><i class="icon-video"></i></a>
-                            <div class="overlay"></div> 
+                            <div class="overlay"></div>
                         </div>
                         <strong><s:property value="tittle"/> (<s:property value="instrumento"/>)</strong>
                         <p><s:property value="description"/></p>
