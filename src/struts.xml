@@ -24,12 +24,20 @@
             <result name="HOME" type="redirectAction">home</result>
         </global-results>
 
-
-
-
+        <action name="registerAdmin" class="pe.com.prueba.action.AdminRegister">
+            <result name="Register">/wap-admin/registerAdmin.jsp</result>
+        </action>
+        <action name="reportAdmin" class="pe.com.prueba.action.AdminReport">
+            <result name="Report">/wap-admin/reportAdmin.jsp</result>
+        </action>
+        <action name="updateAdmin" class="pe.com.prueba.action.AdminUpdate">
+            <result name="Update">/wap-admin/updateAdmin.jsp</result>
+        </action>
+        <action name="deleteAdmin" class="pe.com.prueba.action.AdminDelete">
+            <result name="Delete">/wap-admin/deleteAdmin.jsp</result>
+        </action>
 
         <action name="index" class="pe.com.prueba.action.IndexAction">
-
             <result type="dispatcher" name="success">u_index.jsp</result>
         </action>
 

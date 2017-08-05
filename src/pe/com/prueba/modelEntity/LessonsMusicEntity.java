@@ -53,5 +53,5 @@ public class LessonsMusicEntity extends BaseEntity{
     public void setInstrumentsEntity(InstrumentsEntity instrumentsEntity) {
         this.instrumentsEntity = instrumentsEntity;
     }
-    
+
 }

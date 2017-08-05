@@ -16,7 +16,7 @@ public class DataService extends BaseService {
     public List<Instrument> getInstruments(){
         return this.getInstrumentsEntity().findAll();
     }
-    
+
     public List<Video> getVideos(){
         return this.getVideosEntity().findAll();
     }

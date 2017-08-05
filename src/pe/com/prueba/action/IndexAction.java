@@ -12,7 +12,7 @@ import pe.com.prueba.service.DataService;
 /**
  * Created by Fjorsvartnir on 25/06/2017.
  */
-public class IndexAction extends ActionSupport {
+public class IndexAction extends ActionSupport  {
     private Map<String,Object> session;
     private List<Instrument> instruments;
     private List<Video> videos;
@@ -42,5 +42,5 @@ public class IndexAction extends ActionSupport {
     public void setVideos(List<Video> videos) {
         this.videos = videos;
     }
-    
+
 }
